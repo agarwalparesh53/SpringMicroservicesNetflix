@@ -5,3 +5,6 @@ spring:
     service-registry:
       auto-registration:
         fail-fast: false
+    config:
+      allow-override: true
+      uri: http://localhost:8001
