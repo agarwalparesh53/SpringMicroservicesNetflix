@@ -1,8 +1,20 @@
 spring:
   application:
-    name: words-app
-  profiles:
-    active: noun
+    name: word-app
   cloud:
     config:
       uri: http://localhost:8001
+      fail-fast: true
+  profiles:
+    active: verb
+
+---
+spring:
+  profiles:
+    active: verb
+  cloud:
+    discovery:
+      client:
+        simple:
+          local:
+            service-id: verb
